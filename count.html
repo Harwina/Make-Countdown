@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+    h1{
+        margin: 0 23%;
+    }
+    .btn{
+        background-color:green;
+        font-size: 40px;
+        color: white;
+    }
+    .zero{
+        background-color: pink;
+        color: black;
+    }
+    .reset{
+        margin: 0 30%;
+    }
+</style>
+<body>
+    <div class="main d-flex justify-content-center align-items-center">
+        <div class="sub">
+            <h1 class=" fw-bold">Counter App</h1>
+            <div class="button mt-5">
+                <button class="btn px-5" id="increase" onclick="changeCounter(1)">+</button>
+                <button class="btn zero px-5 mx-5" id="zero">0</button>
+                <button class="btn px-5" id="decrese" onclick="changeCounter(-1)">-</button>
+            </div>
+            <button class="btn reset mt-5 px-5" onclick="resetCounter()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let count=0;
+
+        function updateCounter() {
+            document.getElementById('zero').innerHTML = count;
+        }
+
+        // Function to handle counter changes
+        function changeCounter(value) {
+            count += value;
+            updateCounter();
+        }
+
+        // Function to reset the counter
+        function resetCounter() {
+            count = 0;
+            updateCounter();
+        }
+
+        // Initial display update
+        updateCounter();
+    </script>
+</body>
+
+</html>
